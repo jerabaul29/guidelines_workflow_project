@@ -134,7 +134,7 @@ drwxr-xr-x 18 jrmet jrmet 4,0K april 18 14:40 singularity_sandbox
 
 You can now distribute the (reasonably heavy) slices on any system you want.
 
-- to put them together, the user should check the integrity (sha256sum) of all slices, and them put them back together:
+- to put them together, the user should check the integrity (using again sha256sum, not shown here) of all slices, and them put them back together and check the checksum of the final image, before unarchiving it:
 
 ```
 ~/Desktop/Current/SingularityPlayground_fromslice> ls -lrth
