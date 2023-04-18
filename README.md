@@ -160,7 +160,7 @@ exit
 
 As you can see, I could get back into my singularity container with the python3 I had installed inside.
 
-## Installing software nside Singularity
+## Installing software inside Singularity
 
 Once inside the container, you can use any tool to install software (and you have admin rights by default, no need to sudo as visible above). Still, for convenience, I would recommend trying to install using (higher should be what to attempt first):
 
