@@ -87,7 +87,7 @@ exit
 ~/Desktop/Current/SingularityPlayground> 
 ```
 
-### Tar sandbox and moving it around
+### Tar sandbox and moving it around (alternative 1)
 
 Once you are happy with the sandbox content (it contains all the dependencies needed, the code that needs to be made runnable in the future, etc), you can tar the sandbox into a file:
 
@@ -159,6 +159,29 @@ exit
 ```
 
 As you can see, I could get back into my singularity container with the python3 I had installed inside.
+
+### Generate a sif file from the sandbox and move it around (alternative 2, credits @venturi123 )
+
+You can also generate a sif file from the sandbox and move it around instead if you want:
+
+```
+~/Desktop/Current/SingularityPlayground> ls | grep sif
+~/Desktop/Current/SingularityPlayground> sudo singularity build singularity_sandbox.sif singularity_sandbox
+~/Desktop/Current/SingularityPlayground> ls | grep sif
+singularity_sandbox.sif
+```
+
+This can be moved around as any .sif file, and it can be converted again to a sandbox either from a local copy of the file:
+
+```
+singularity build --fakeroot --sandbox singularity_sandbox singularity_sandbox.sif
+```
+
+or directly from a container hosting service:
+
+```
+singularity build --fakeroot --sandbox singularity_sandbox library://user/main/singularity_sandbox:latest
+```
 
 ## Installing software inside Singularity
 
